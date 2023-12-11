@@ -1,6 +1,7 @@
-package com.example.reactspring;
+package com.example.reactspring.controllers;
 
-import org.bson.types.ObjectId;
+import com.example.reactspring.services.MovieService;
+import com.example.reactspring.models.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +25,8 @@ public class MovieController {
         return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<Movie>> getMovie(@PathVariable ObjectId id) {
-        return new ResponseEntity<Optional<Movie>>(movieService.movie(id), HttpStatus.OK);
+    @GetMapping("/{imdbId}")
+    public ResponseEntity<Optional<Movie>> getMovie(@PathVariable String imdbId) {
+        return new ResponseEntity<Optional<Movie>>(movieService.movie(imdbId), HttpStatus.OK);
     }
 }

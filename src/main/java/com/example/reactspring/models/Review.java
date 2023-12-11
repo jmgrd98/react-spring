@@ -1,4 +1,4 @@
-package com.example.reactspring;
+package com.example.reactspring.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,4 +17,7 @@ public class Review {
     private ObjectId id;
     private String body;
 
+    public Review(String body) {
+        this.body = body;
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.reactspring;
+package com.example.reactspring.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
